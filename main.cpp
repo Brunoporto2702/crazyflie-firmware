@@ -8,3 +8,4 @@
 
 // Lab programs
 //#include "programs/labs/lab01.h"
+//#include "programs/labs/lab02.h"
