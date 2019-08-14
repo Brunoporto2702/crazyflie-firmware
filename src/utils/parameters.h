@@ -12,9 +12,13 @@ const float I_yy = 16.0e-6f;        // kg.m^2
 const float I_zz = 29.0e-6f;        // kg.m^2
 const float l = 33e-3f;             // m
 
-//Parâmetros de controle de rotação em malha aberta
+//Parâmetros de controle de rotação do motor em malha aberta  (lab 02)
 
 const float a1 = -4.7254e-5f;   //parametro que multiplica o termo de primeiro grau
-const float a2 = 1.9527e-7f;   //parametro que multiplica o termo de segundo grau
+const float a2 = 1.9527e-7f;   //parametro que multiplica o termo de segundo grau 
+
+//Parametros aerodinâmicos do drone   (lab 03)
+
+const float kl = 2.2591e-8f; //constante de sustentação
 
 #endif
