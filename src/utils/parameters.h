@@ -21,4 +21,8 @@ const float a2 = 1.9527e-7f;   //parametro que multiplica o termo de segundo gra
 
 const float kl = 2.2591e-8f; //constante de sustentação
 
+//Parametros aerodinâmicos do drone   (lab 04)
+
+const float kd = 1.6754e-10f; //constante de arrasto
+
 #endif
