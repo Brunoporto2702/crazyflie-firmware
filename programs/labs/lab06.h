@@ -1,26 +1,27 @@
 #include "mbed.h"
 #include "crazyflie.h"
 #include <cmath>
+#include "mixer.h"
 
 //Declaring MIXER object mixer
-MIXER mixer;
+MIXER Mixer;
 
 // Main program
 int main()
 {
     // Arm motor
-    mixer.arm();
+    Mixer.arm();
 
     //Actuate motor with 70% mg total trust force (N) and zero torques   
-    mixer.actuate(0.6*m*g,0,0,0);
+    Mixer.actuate(0.6*m*g,0,0,0);
     wait(2);
 
-    mixer.actuate(0.6*m*g,0,0,0.001);
+    Mixer.actuate(0.6*m*g,0,0,0.001);
     wait(1);
 
-    mixer.actuate(0.6*m*g,0,0,-0.001);
+    Mixer.actuate(0.6*m*g,0,0,-0.001);
     wait(1);
 
     //turn off all motors
-    mixer.disarm();
+    Mixer.disarm();
 }
