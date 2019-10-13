@@ -25,4 +25,12 @@ const float kl = 2.2591e-8f; //constante de sustentação
 
 const float kd = 1.6754e-10f; //constante de arrasto
 
+//Intervalo de tempo para estimador de attitude
+const float dt = 2.0/1000.0; //s
+
+// Filtro passa baixa (Parâmetros)
+//float omega_c = 6.2;  // frequencia de corte
+//float alpha = (omega_c*dt)/(1+omega_c*dt);
+const float alpha_lff = 0.01;  
+
 #endif
