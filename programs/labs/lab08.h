@@ -1,6 +1,5 @@
 #include "crazyflie.h"
 #include "mbed.h"
-#include "mixer.h"
 #include <cmath>
 
 
@@ -10,10 +9,19 @@ MIXER Mixer;
 // Declaring attittude estimantor object
 AttitudeEstimator att_est;
 
+// Declaring attitude controler
+AttitudeController att_cont;
+
 Timer tim;
 
 // Main program
 int main() {
+    float phi_r = 0.0f;
+    float theta_r = 0.0f;
+    float psi_r = 0.0f;
+    float r_r = 0.0f;
+    float q_r = 0.0f;
+    float p_r = 0.0f;
     Mixer.arm();
     att_est.init();
     wait(5.0);
@@ -23,14 +31,10 @@ int main() {
     {
         att_est.estimate();
 
-        float Torque_theta = -att_est.theta * 0.00071*2 - att_est.q * 0.005;
-
-        float Torque_phi = -att_est.phi * 0.00071*2 - att_est.p * 0.005;
-
-        float Torque_psi = -att_est.psi * 0.00071*2 - att_est.r * 0.005;
+        att_cont.control(phi_r, theta_r, psi_r, att_est.phi, att_est.theta, att_est.psi, att_est.p, att_est.q, att_est.r);
 
         // Actuate motor with 70% mg total trust force (N) and zero torques
-        Mixer.actuate(0.7 * m * g, Torque_phi, Torque_theta, Torque_psi);
+        Mixer.actuate(0.53 * m * g, att_cont.tau_phi, att_cont.tau_theta, att_cont.tau_psi);
 
 
         t = tim.read();

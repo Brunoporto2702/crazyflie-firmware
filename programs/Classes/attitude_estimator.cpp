@@ -12,6 +12,8 @@ AttitudeEstimator::AttitudeEstimator()  :  imu(IMU_SDA,IMU_SCL),led_blue(LED_BLU
     q = 0;
     r = 0;
     p_bias = 0;
+    q_bias = 0;
+    r_bias =0;
     led_blue = 0;
 }
 

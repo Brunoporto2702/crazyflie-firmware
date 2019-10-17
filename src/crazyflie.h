@@ -13,5 +13,7 @@
 // Crazyflie Personal Classes
 #include "programs/Classes/mixer.h"
 #include "attitude_estimator.h"
+#include "attitude_controler.h"
+#include "mixer.h"
 
 #endif
