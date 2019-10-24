@@ -28,6 +28,22 @@ const float kd = 1.6754e-10f; //constante de arrasto
 //Intervalo de tempo para estimador de attitude
 const float dt = 2.0/1000.0; //s
 
+//Intervalo de tempo para estimador vertical
+const float dt_vert = 50.0/1000.0; //s
+
+// constantes do estimador vertical
+const float ro_vert1 = 0.30;
+const float ro_vert2 = 0.30;
+
+// Ganhos k1 e k2 controlador de attitude
+const float k1_att = 0.00071*2;
+const float k2_att = 0.005;
+
+// Ganhos k1 e k2 controlador vertical
+const float k1_vert = 5.4;//0.24;
+const float k2_vert = 4;//0.12;
+
+
 // Filtro passa baixa (Parâmetros)
 //float omega_c = 6.2;  // frequencia de corte
 //float alpha = (omega_c*dt)/(1+omega_c*dt);
