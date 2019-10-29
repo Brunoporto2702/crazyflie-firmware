@@ -36,12 +36,12 @@ const float ro_vert1 = 0.30;
 const float ro_vert2 = 0.30;
 
 // Ganhos k1 e k2 controlador de attitude
-const float k1_att = 0.00071*2;
+const float k1_att = 0.00071*1.5;
 const float k2_att = 0.005;
 
 // Ganhos k1 e k2 controlador vertical
-const float k1_vert = 5.4;//0.24;
-const float k2_vert = 4;//0.12;
+const float k1_vert = 5.8;//0.24;
+const float k2_vert = 3.4;//0.12;
 
 
 // Filtro passa baixa (Parâmetros)

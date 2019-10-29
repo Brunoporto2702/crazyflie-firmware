@@ -11,9 +11,9 @@ VerticalController :: VerticalController ()
 void VerticalController :: control(float z, float w, float r)
 {
 
-    if (z< (0.3* r)){
-        deploy();
-    }
+    // if (z< (0.3* r)){
+    //     deploy();
+    // }
     Ft = m*(k1_vert * (r - z) - k2_vert * w + g);
 }
 
