@@ -72,7 +72,7 @@ int main() {
       // vertical controler
       ver_cont.control(ver_est.z, ver_est.w, r);
 
-      // Actuate motor with 70% mg total trust force (N) and zero torques
+      // Actuate motor with controllers
       Mixer.actuate(ver_cont.Ft / (cos(att_est.theta) * cos(att_est.phi)),
                     att_cont.tau_phi, att_cont.tau_theta, att_cont.tau_psi);
     }

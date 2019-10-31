@@ -16,6 +16,7 @@
 #include "attitude_controler.h"
 #include "vertical_estimator.h"
 #include "vertical_controller.h"
+#include "horizontal_estimator.h"
 #include "mixer.h"
 
 #endif

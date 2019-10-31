@@ -1,5 +1,8 @@
 #ifndef parameters_h
 #define parameters_h
+#include <cmath>
+
+
 
 // Physical constants
 const float pi = 3.1416f;
@@ -43,6 +46,14 @@ const float k2_att = 0.005;
 const float k1_vert = 5.8;//0.24;
 const float k2_vert = 3.4;//0.12;
 
+// constantes de conversão de pixels para metros (sensor flow)
+const float alfa_flow = 42.0/180.0*pi;
+const float w_pixels = 420.0;
+const float sigma_delta_p = 2.0*tan(alfa_flow/2.0)/w_pixels;
+const float sigma_v = sigma_delta_p/dt;
+
+//parâmetros alfa filtro passa baixa vel. flow
+const float alfa_lff_flow = 0.2;
 
 // Filtro passa baixa (Parâmetros)
 //float omega_c = 6.2;  // frequencia de corte
