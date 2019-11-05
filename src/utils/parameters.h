@@ -53,11 +53,23 @@ const float sigma_delta_p = 2.0*tan(alfa_flow/2.0)/w_pixels;
 const float sigma_v = sigma_delta_p/dt;
 
 //parâmetros alfa filtro passa baixa vel. flow
-const float alfa_lff_flow = 0.2;
+const float alfa_lff_flow = 0.01;
 
 // Filtro passa baixa (Parâmetros)
 //float omega_c = 6.2;  // frequencia de corte
 //float alpha = (omega_c*dt)/(1+omega_c*dt);
 const float alpha_lff = 0.01;  
+
+// Ganhos controlador horizontal
+// const float OS = 0.5;
+// const float zeta = sqrt((pow(log(OS/100.0),2.0))/(pow(pi,2.0)+pow(log(OS/100.0),2.0)));
+// const float ts = 4; //segundos
+// const float wn = ts*zeta/4;
+
+
+// const float k1_hor = 0.265;
+const float k1_hor = 0.8;
+const float k2_hor = 0.1248;
+
 
 #endif

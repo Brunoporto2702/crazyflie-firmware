@@ -34,6 +34,10 @@ class HorizontalEstimator
         float v_x;
         float v_y;
 
+        // position in meters
+        float x;
+        float y;
+
 
     private:
         PMW3901 flow;
