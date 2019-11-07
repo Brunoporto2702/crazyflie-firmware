@@ -12,9 +12,9 @@ AttitudeController :: AttitudeController ()
 // Control torques (N.m) given reference angles (rad) and current angles ( rad ) and angular velocities ( rad /s)
 void AttitudeController :: control(float phi_r, float theta_r, float psi_r, float phi, float theta, float psi, float p, float q, float r)
 {
-    tau_theta = -theta * k1_att - q * k2_att;
+    tau_theta = -(theta - theta_r) * k1_att - q * k2_att;
 
-    tau_phi = -phi * k1_att - p * k2_att;
+    tau_phi = -(phi -phi_r) * k1_att - p * k2_att;
 
     tau_psi = -psi * k1_att - r * k2_att;
 }

@@ -37,10 +37,10 @@ void HorizontalEstimator::correct(float z, float theta, float phi, float q, floa
     float v_y_m = (sigma_v*flow.py - p)*d;
     // float v_x_m = (sigma_v*flow.px)*d;
     // float v_y_m = (sigma_v*flow.py)*d;
-    delta_x = delta_x_m;
-    delta_y = delta_y_m;
-    x = x+delta_x;
-    y = y+delta_y;
-    v_x = (1-alfa_lff_flow)*v_x + alfa_lff_flow*v_x_m;
-    v_y = (1-alfa_lff_flow)*v_y + alfa_lff_flow*v_y_m;
+    //delta_x = delta_x_m;
+    //delta_y = delta_y_m;
+    v_x = (1.0-alfa_lff_flow)*v_x + alfa_lff_flow*v_x_m;
+    v_y = (1.0-alfa_lff_flow)*v_y + alfa_lff_flow*v_y_m;
+    x = x+v_x*dt;
+    y = y+v_y*dt;
 }

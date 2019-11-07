@@ -39,7 +39,7 @@ const float ro_vert1 = 0.30;
 const float ro_vert2 = 0.30;
 
 // Ganhos k1 e k2 controlador de attitude
-const float k1_att = 0.00071*1.5;
+const float k1_att = 0.00071*0.5;
 const float k2_att = 0.005;
 
 // Ganhos k1 e k2 controlador vertical
@@ -53,7 +53,7 @@ const float sigma_delta_p = 2.0*tan(alfa_flow/2.0)/w_pixels;
 const float sigma_v = sigma_delta_p/dt;
 
 //parâmetros alfa filtro passa baixa vel. flow
-const float alfa_lff_flow = 0.01;
+const float alfa_lff_flow = 0.5;
 
 // Filtro passa baixa (Parâmetros)
 //float omega_c = 6.2;  // frequencia de corte
@@ -68,8 +68,9 @@ const float alpha_lff = 0.01;
 
 
 // const float k1_hor = 0.265;
-const float k1_hor = 0.8;
-const float k2_hor = 0.1248;
+// const float k2_hor = 0.1248;
+const float k1_hor = 2.0;
+const float k2_hor = 4.0;
 
 
 #endif
