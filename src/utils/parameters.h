@@ -39,12 +39,16 @@ const float ro_vert1 = 0.30;
 const float ro_vert2 = 0.30;
 
 // Ganhos k1 e k2 controlador de attitude
-const float k1_att = 0.00071*0.5;
-const float k2_att = 0.005;
+// const float k1_att = 0.00071*0.5;
+// const float k2_att = 0.005;
+const float k1_att = 4;
+const float k2_att = 16;
 
 // Ganhos k1 e k2 controlador vertical
 const float k1_vert = 5.8;//0.24;
 const float k2_vert = 3.4;//0.12;
+// const float k1_vert = 1.1;
+// const float k2_vert = 6.0;
 
 // constantes de conversão de pixels para metros (sensor flow)
 const float alfa_flow = 42.0/180.0*pi;
@@ -68,9 +72,9 @@ const float alpha_lff = 0.01;
 
 
 // const float k1_hor = 0.265;
-// const float k2_hor = 0.1248;
-const float k1_hor = 2.0;
-const float k2_hor = 4.0;
+// const float k2_hor = 1.0;
+const float k1_hor = 1.0;
+const float k2_hor = 6.0;
 
 
 #endif

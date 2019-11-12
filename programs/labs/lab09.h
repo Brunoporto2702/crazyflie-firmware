@@ -7,6 +7,7 @@ USBSerial serial;
 // Crazyflie controller objects
 AttitudeEstimator att_est;
 VerticalEstimator ver_est;
+VerticalController ver_cont;
 
 // Define ticker
 Ticker tic;
@@ -20,6 +21,8 @@ bool flag_range = false;
 void callback() { flag = true; }
 void callback_range() { flag_range = true; }
 
+
+float r = 1.0;
 // Main program
 int main() {
   // Initialize estimator objects
@@ -39,7 +42,8 @@ int main() {
     if (flag_range) {
       flag_range = false;
       ver_est.correct(att_est.theta, att_est.phi);
-      serial.printf("z [m ]:%f | w [m/s ]:%f \n", ver_est.z, ver_est.w);
+      ver_cont.control(ver_est.z, ver_est.w, r);
+      serial.printf("z [m ]:%6.2f | w [m/s ]:%6.2f | Ft[N]: %6.2f\n", ver_est.z, ver_est.w, ver_cont.Ft);
     }
   }
 }
