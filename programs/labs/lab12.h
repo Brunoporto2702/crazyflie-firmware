@@ -59,7 +59,7 @@ int main() {
   wait(5.0);
   tim.start();
   float t = 0;
-  while (t < 20.0 && (att_est.p < 4 * 3.14) && (att_est.q < 3.14 * 8) &&
+  while (t < 63.0 && (att_est.p < 4 * 3.14) && (att_est.q < 3.14 * 8) &&
          (att_est.r < 3.14 * 8) && (abs(att_est.theta) < 3.14 / 4) &&
          (abs(att_est.phi) < 3.14 / 4) && (abs(att_est.psi) < 3.14 / 4)) {
     if (flag) {
@@ -73,14 +73,14 @@ int main() {
                        att_est.psi, att_est.p, att_est.q, att_est.r);
       
 
-      if ((5.0 < t) && (t < 15.0)) {
-        r = 1.0;
+      if ((5.0 < t) && (t < 60.0)) {
+        r = 0.5;
       } 
-      else if (t >= 15.0 ){
-        r = -0.2 * (t-15.0) + 1.0;
+      else if (t >= 60.0 ){
+        r = -0.1 * (t-60.0);
       }
       else {
-          r = 0.2*t; 
+          r = 0.1*t; 
       }
 
     // if (t < 5.0) {

@@ -39,10 +39,10 @@ const float ro_vert1 = 0.30;
 const float ro_vert2 = 0.30;
 
 // Ganhos k1 e k2 controlador de attitude
-// const float k1_att = 0.00071*0.5;
-// const float k2_att = 0.005;
-const float k1_att = 4;
-const float k2_att = 16;
+const float k1_att = 0.00071*0.5;
+const float k2_att = 0.005;
+// const float k1_att = 4;
+// const float k2_att = 16;
 
 // Ganhos k1 e k2 controlador vertical
 const float k1_vert = 5.8;//0.24;
